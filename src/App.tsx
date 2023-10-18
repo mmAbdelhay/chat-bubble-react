@@ -8,7 +8,6 @@ import Login from './components/auth/Login.tsx';
 function App() {
     const {direction, user} = useContext(MainContext);
 
-
     if(!user)
         return <Login />
 

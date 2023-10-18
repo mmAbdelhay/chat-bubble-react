@@ -14,7 +14,10 @@ const ChatInput: React.FC<Props> = () => {
         const payload = {
             id: getRandomNumber(),
             content: newMessage,
-            sender: user
+            sender: {
+                id: user.id,
+                name: user.name
+            }
         }
         setMessages((previousMessages: never) => [...previousMessages, payload]);
         setNewMessage("");

@@ -19,7 +19,7 @@ const ChatList: React.FC<Props> = ({message}) => {
     const {user} = useContext(MainContext)
 
     return (
-        <div className={`chat chat-${user.id == message.sender.id ? "end" : "start"}`}>
+        <div className={`chat ${user.id == message.sender.id ? "chat-end" : "chat-start"}`}>
             <div className="chat-image avatar ">
                 <div className="w-10 rounded-full">
                     <img src={user.avatar} alt={'avatar'} className="w-10 rounded-full"/>
