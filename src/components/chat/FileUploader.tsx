@@ -2,10 +2,7 @@ import React, {useContext, useState} from "react";
 import {getRandomNumber} from "../../services/getRandimNumber.ts";
 import {MainContext} from "../../context/StoreProvider.tsx";
 
-interface Props {
-}
-
-const FileUploader: React.FC<Props> = () => {
+const FileUploader: React.FC = () => {
     const {setMessages, user} = useContext(MainContext);
     const [file, setFile] = useState(null);
     const handleUploadFile = (e: any) => {

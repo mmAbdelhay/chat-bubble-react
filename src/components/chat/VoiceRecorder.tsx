@@ -2,10 +2,7 @@ import React, {useState, useRef, useContext} from 'react';
 import {MainContext} from "../../context/StoreProvider.tsx";
 import {getRandomNumber} from "../../services/getRandimNumber.ts";
 
-interface Props {
-}
-
-const VoiceRecorder: React.FC<Props> = () => {
+const VoiceRecorder: React.FC = () => {
     const {setMessages, user} = useContext(MainContext)
     const [mediaRecorder, setMediaRecorder] = useState(null);
     const [audioBlob, setAudioBlob] = useState(null);

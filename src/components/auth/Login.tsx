@@ -2,10 +2,8 @@ import React, {useContext, useState} from "react";
 import {MainContext} from "../../context/StoreProvider.tsx";
 import {getRandomNumber} from "../../services/getRandimNumber.ts";
 
-interface Props {
-}
 
-const Login: React.FC<Props> = () => {
+const Login : React.FC = () => {
     const {setUser} = useContext(MainContext);
     const [newUser, setNewUser] = useState("");
     const [file, setFile] = useState(null);

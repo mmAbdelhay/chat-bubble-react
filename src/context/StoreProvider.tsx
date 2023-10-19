@@ -1,11 +1,39 @@
-import React, {useState, createContext} from "react";
+import React, {useState, createContext, useEffect} from "react";
+import {getRandomNumber} from "../services/getRandimNumber.ts";
 
 export const MainContext = createContext(null);
+
+const defaultMessages = [
+    {
+        id: getRandomNumber(),
+        content: "just default content",
+        type: "text",
+        sender: {
+            id: getRandomNumber(),
+            name: "default1",
+            avatar: 'https://rb.gy/xbf6j'
+        }
+    },
+    {
+        id: getRandomNumber(),
+        content: "another default content",
+        type: "text",
+        sender: {
+            id: getRandomNumber(),
+            name: "default2",
+            avatar: 'https://rb.gy/xbf6j'
+        }
+    }
+];
 
 const StoreProvider = (props: any) => {
     const [user, setUser] = useState();
     const [direction, setDirection] = useState("ltr");
     const [messages, setMessages] = useState([]);
+
+    useEffect(() => {
+        setMessages(defaultMessages)
+    }, [])
 
     return (
         <React.Fragment>

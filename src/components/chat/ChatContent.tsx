@@ -1,8 +1,15 @@
-import React, {useContext} from "react";
-import {MainContext} from "../../context/StoreProvider.tsx";
-import ChatList from "./ChatList.tsx";
+import React from "react";
 
 interface Props {
+    message: {
+        id: number,
+        content: string;
+        type: string,
+        sender: {
+            id: number,
+            name: string
+        }
+    }
 }
 
 const ChatContent: React.FC<Props> = ({message}) => {

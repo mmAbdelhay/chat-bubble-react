@@ -2,10 +2,7 @@ import React, {useContext} from "react";
 import {MainContext} from "../../context/StoreProvider.tsx";
 import ChatList from "./ChatList.tsx";
 
-interface Props {
-}
-
-const ChatBubble: React.FC<Props> = () => {
+const ChatBubble: React.FC = () => {
     const {user, messages} = useContext(MainContext)
 
     if (messages.length == 0)

@@ -1,4 +1,4 @@
-import {useContext} from "react";
+import React, {useContext} from "react";
 import {MainContext} from "../../context/StoreProvider.tsx";
 
 const NavBar = () => {
@@ -23,9 +23,25 @@ const NavBar = () => {
                         <li>
                             <button onClick={handleRtl}>{direction === "ltr" ? "rtl" : "ltr"}</button>
                         </li>
-                            <li>
-                                <button onClick={() => setUser(null)}>Log out</button>
-                            </li>
+                        <li>
+                                <select className="select w-full" onChange={e => {
+                                    document.documentElement.setAttribute('data-theme', e.target.value);
+                                }}>
+                                    <option disabled selected>Pick your favorite theme</option>
+
+                                    <option>light</option>
+                                    <option>dark</option>
+                                    <option>cupcake</option>
+                                    <option>bumblebee</option>
+                                    <option>emerald</option>
+                                    <option>corporate</option>
+                                    <option>synthwave</option>
+                                    <option>retro</option>
+                                </select>
+                        </li>
+                        <li>
+                            <button onClick={() => setUser(null)}>Log out</button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -33,7 +49,7 @@ const NavBar = () => {
                 <a className="btn btn-ghost normal-case text-xl">Chat bubble</a>
             </div>
             <div className="navbar-end"></div>
-        </header >
+        </header>
     )
 }
 

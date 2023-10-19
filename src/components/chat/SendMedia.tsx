@@ -1,12 +1,8 @@
 import React from "react";
 import VoiceRecorder from "./VoiceRecorder.tsx";
-import {getRandomNumber} from "../../services/getRandimNumber.ts";
 import FileUploader from "./FileUploader.tsx";
 
-interface Props {
-}
-
-const SendMedia: React.FC<Props> = () => {
+const SendMedia: React.FC = () => {
 
     return (
         <>

@@ -3,9 +3,7 @@ import {MainContext} from "../../context/StoreProvider.tsx";
 import SendMedia from "./SendMedia.tsx";
 import {getRandomNumber} from "../../services/getRandimNumber.ts";
 
-interface Props {}
-
-const ChatInput: React.FC<Props> = () => {
+const ChatInput: React.FC = () => {
     const [newMessage, setNewMessage] = useState("");
     const {setMessages, user} = useContext(MainContext)
 
@@ -14,10 +12,7 @@ const ChatInput: React.FC<Props> = () => {
         const payload = {
             id: getRandomNumber(),
             content: newMessage,
-            sender: {
-                id: user.id,
-                name: user.name
-            }
+            sender: user
         }
         setMessages((previousMessages: never) => [...previousMessages, payload]);
         setNewMessage("");

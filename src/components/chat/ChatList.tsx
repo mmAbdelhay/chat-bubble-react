@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import {MainContext} from "../../context/StoreProvider.tsx";
-import avatar from '../../assets/avatar.png'
 import ChatContent from "./ChatContent.tsx";
 
 interface Props {
@@ -22,7 +21,7 @@ const ChatList: React.FC<Props> = ({message}) => {
         <div className={`chat ${user.id == message.sender.id ? "chat-end" : "chat-start"}`}>
             <div className="chat-image avatar ">
                 <div className="w-10 rounded-full">
-                    <img src={user.avatar} alt={'avatar'} className="w-10 rounded-full"/>
+                    <img src={message.sender.avatar} alt={'avatar'} className="w-10 rounded-full"/>
                 </div>
             </div>
             <div className={"chat-header"}>
